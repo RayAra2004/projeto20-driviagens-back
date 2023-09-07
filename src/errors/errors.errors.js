@@ -1,6 +1,6 @@
-function unprocessableContent(resource = "Item"){
+function unprocessableContent(resource = "Requisição não processada!"){
     return {
-        type: "unprocessable", message: `${resource} não processado!`
+        type: "unprocessable", message: `${resource}`
     };
 }
 
@@ -10,7 +10,14 @@ function conflict(resource = "Item"){
     };
 }
 
+function conflictCity(){
+    return {
+        type: "conflict", message: "As cidades de origem e destino devem ser diferentes!!"
+    };
+}
+
 export const errors = {
     unprocessableContent,
-    conflict
+    conflict, conflictCity
+    
 }
