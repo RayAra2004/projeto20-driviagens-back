@@ -1,5 +1,5 @@
 import { Router } from "express";
-import validateSchema from "../middlewares/validateSchema.js";
+import validateSchema from "../middlewares/validateSchema.middleware.js";
 import { passengersSchema } from "../schemas/passengers.schemas.js";
 import { create } from "../controllers/passengers.controllers.js";
 

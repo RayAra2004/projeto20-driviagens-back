@@ -5,6 +5,7 @@ export default function errorHandlingMiddleware(error, req, res, next){
         case "notFound":
             return res.status(httpStatus.NOT_FOUND).send("Não encontrado!!")
         default:
-            res.status(httpStatus.INTERNAL_SERVER_ERROR),send("Erro interno do servidor!!")
+            console.log(error)
+            res.status(httpStatus.INTERNAL_SERVER_ERROR).send("Erro interno do servidor!!")
     }
 }
