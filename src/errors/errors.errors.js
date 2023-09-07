@@ -16,8 +16,14 @@ function conflictCity(){
     };
 }
 
+function badRequest(){
+    return{
+        type: "badRequest", message: "Dados inválidos!!"
+    }
+}
+
 export const errors = {
     unprocessableContent,
-    conflict, conflictCity
-    
+    conflict, conflictCity,
+    badRequest
 }
