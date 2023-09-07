@@ -4,7 +4,7 @@ import { mapObjectToInsertQuery } from "../utils/sql.utils.js"
 async function create(passenger){
     const { objectColumns, objectValues, paramsOrder } = mapObjectToInsertQuery(passenger);
 
-    return db.query(`INSERT INTO passengers(${objectColumns}) VALUES(${paramsOrder}) RETURNING *;`, [...objectValues]);
+    return await db.query(`INSERT INTO passengers(${objectColumns}) VALUES(${paramsOrder}) RETURNING *;`, [...objectValues]);
 }
 
 export const passengersRepository = {

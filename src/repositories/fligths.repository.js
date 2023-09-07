@@ -4,7 +4,7 @@ import { mapObjectToInsertQuery } from "../utils/sql.utils.js";
 async function create(fligths){
     const { objectColumns, objectValues, paramsOrder } = mapObjectToInsertQuery(fligths);
 
-    return db.query(`INSERT INTO fligths(${objectColumns}) VALUES(${paramsOrder}) RETURNING *;`, [...objectValues]);
+    return await db.query(`INSERT INTO fligths(${objectColumns}) VALUES(${paramsOrder}) RETURNING *;`, [...objectValues]);
 }
 
 export const fligthsRepository = {
