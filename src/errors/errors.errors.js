@@ -12,5 +12,5 @@ function conflict(resource = "Item"){
 
 export const errors = {
     unprocessableContent,
-    errors
+    conflict
 }
