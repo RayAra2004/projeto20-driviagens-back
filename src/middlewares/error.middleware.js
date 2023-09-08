@@ -16,6 +16,8 @@ export default function errorHandlingMiddleware(error, req, res, next){
             return res.status(httpStatus.UNPROCESSABLE_ENTITY).send(error.message);
         case "badRequest":
             return res.status(httpStatus.BAD_REQUEST).send(error.message);
+        case "internalServerError":
+            return res.status(httpStatus.INTERNAL_SERVER_ERROR).send(error.message);
         default:
             console.log(error)
             res.status(httpStatus.INTERNAL_SERVER_ERROR).send("Erro interno do servidor!!");

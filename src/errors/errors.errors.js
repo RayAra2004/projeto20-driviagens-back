@@ -22,8 +22,16 @@ function badRequest(){
     }
 }
 
+
+function internalServerError(resource = "Erro interno do servidor!!"){
+    return{
+        type: "internalServerError", message: resource
+    }
+}
+
 export const errors = {
     unprocessableContent,
     conflict, conflictCity,
-    badRequest
+    badRequest,
+    internalServerError
 }
